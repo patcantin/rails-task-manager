@@ -7,19 +7,20 @@ Rails.application.routes.draw do
   # # read all tasks
   get "tasks", to: "tasks#index"
 
-  # # read one restaurant
-  # get "restaurants/:id", to: "restaurants#show"
+  # # read one task
+  get "task/:id", to: "tasks#show", as: :task
 
   # # create one restaurant (2 requests)
   #   # 1st request to get the form
   #   # 2nd request to post the params
-  # get "restaurants/new", to: "restaurants#new"
-  # post "restaurants", to: "restaurants#create"
+  get "tasks/new", to: "tasks#new"
+  post "tasks", to: "tasks#create"
+
 
   # # update one restaurant
-  # get "restaurants/:id/edit", to: "restaurants#edit"
-  # patch "restaurant/:id", to: "restaurants#update"
+  get "task/:id/edit", to: "tasks#edit"
+  patch "task/:id", to: "tasks#update"
 
   # # delete one restaurant
-  # delete "restaurants/:id", to: "restaurants#destroy"
+  delete "task/:id", to: "tasks#destroy"
 end
